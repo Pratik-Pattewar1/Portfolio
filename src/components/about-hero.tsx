@@ -20,7 +20,7 @@ export default function AboutHero() {
               height={100}
               className="h-auto w-full px-0 xl:px-16"
               alt="hero image"
-              lightColor="#E0FFFF"
+              lightColor="#ffffff"
               darkColor="#004D4D"
               unoptimized
             />
