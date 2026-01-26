@@ -29,11 +29,18 @@ export default function ContactFormModal({
   const handleSubmit = async (values: ContactFormValues) => {
     setIsSendingMail(true);
     try {
+      // Log values being sent for debugging
+      console.log("Sending values to /api/sendmail:", values);
+
       const response = await fetch("/api/sendmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
+      const responseBody = await response.text();
+      if (!response.ok) {
+        console.error("SendMail API error:", response.status, responseBody);
+      }
       if (response.ok) {
         setToastState({
           type: "success",
@@ -51,7 +58,8 @@ export default function ContactFormModal({
               : "Oop! Unable to send email",
         });
       }
-    } catch {
+    } catch (err) {
+      console.error("SendMail fetch error:", err);
       setToastState({
         type: "failure",
         value: true,
