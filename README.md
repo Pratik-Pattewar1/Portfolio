@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio website built using Next.js, Tailwind CSS, TypeScript and Framer Motion.
+Personal portfolio website built using Next.js, Tailwind CSS, TypeScript and Framer  Motion.
 
 ## Tech Stack
 - Next.js
