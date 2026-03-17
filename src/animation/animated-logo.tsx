@@ -1,34 +1,92 @@
 import { AnimatePresence, Variants, motion } from "framer-motion";
 
 export default function AnimatedLogo() {
-  const iconVariant: Variants = {
+  const strokeVariant: Variants = {
     hidden: {
       pathLength: 0,
-      fill: "rgba(0, 0, 0, 0)",
+      fill: "rgba(31, 141, 147, 0)",
     },
     visible: {
       pathLength: 1,
-      // Set fill as per your theme
-      fill: "#1f8d93",
+      fill: "rgba(31, 141, 147, 0)",
     },
   };
+
+  const fillVariant: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
+
+  // Outer shell of P
+  const outerPath =
+    "M 100 400 L 100 50 L 260 50 Q 380 50 380 170 Q 380 290 260 290 L 180 290 L 180 400 Z";
+
+  // Inner bowl cutout (counter-shape)
+  const innerPath =
+    "M 180 110 L 260 110 Q 310 110 310 170 Q 310 230 260 230 L 180 230 Z";
 
   return (
     <AnimatePresence>
       <motion.svg
         viewBox="0 0 450 450"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full fill-accent stroke-accent"
+        className="h-full w-full"
       >
+        {/* Fill layer — fades in after stroke completes */}
         <motion.path
-          d="M321.955 420L179.465 127.143L224.998 36.1755L416.91 420H321.955ZM204.867 263.253L128.055 420H33.0897L158.769 168.608L204.867 263.253Z"
-          strokeWidth="15"
-          variants={iconVariant}
+          d={`${outerPath} M 180 110 L 260 110 Q 310 110 310 170 Q 310 230 260 230 L 180 230 Z`}
+          fill="#1f8d93"
+          stroke="none"
+          fillRule="evenodd"
+          variants={fillVariant}
           initial="hidden"
           animate="visible"
           transition={{
-            default: { duration: 3, ease: "easeInOut" },
-            fill: { duration: 3, ease: [1, 0, 0.8, 1] },
+            duration: 0.5,
+            delay: 2.8,
+            ease: "easeIn",
+          }}
+        />
+
+        {/* Outer contour draw-on */}
+        <motion.path
+          d={outerPath}
+          fill="none"
+          stroke="#1f8d93"
+          strokeWidth="12"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          variants={strokeVariant}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            pathLength: { duration: 2.2, ease: [0.65, 0, 0.35, 1] },
+            fill: { duration: 0 },
+          }}
+        />
+
+        {/* Inner bowl draw-on (slight delay) */}
+        <motion.path
+          d={innerPath}
+          fill="none"
+          stroke="#1f8d93"
+          strokeWidth="12"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          variants={strokeVariant}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            pathLength: {
+              duration: 1.4,
+              ease: [0.65, 0, 0.35, 1],
+              delay: 0.7,
+            },
+            fill: { duration: 0 },
           }}
         />
       </motion.svg>

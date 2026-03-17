@@ -55,7 +55,7 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
     ],
     description:
       "NxtMeet is a web-based video and chat platform that enables seamless real-time communication with high-quality video calls and instant messaging using modern web technologies.",
-    sourceCodeHref: "",
+    sourceCodeHref: "https://github.com/Pratik-Pattewar1",
     liveWebsiteHref: "https://nxt-meetfrontend.onrender.com",
   },
   {
@@ -70,8 +70,8 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
       "/images/projects/JobHunt-6.png",
     ],
     description:
-      "**Job-Hunt** is a web-based job portal that connects job seekers and employers by providing an easy platform to search, post, and apply for jobs efficiently.",
-    sourceCodeHref: "",
+      "Job-Hunt is a web-based job portal that connects job seekers and employers by providing an easy platform to search, post, and apply for jobs efficiently.",
+    sourceCodeHref: "https://github.com/Pratik-Pattewar1",
     liveWebsiteHref: "",
   },
   {
@@ -84,9 +84,21 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
       
     ],
     description:
-      "**Virtual Assistant** is an AI-powered web application that supports voice commands, user customization, and real-time interactions using the MERN stack with Gemini API integration.",
-    sourceCodeHref: "",
+      "Virtual Assistant is an AI-powered web application that supports voice commands, user customization, and real-time interactions using the MERN stack with Gemini API integration.",
+    sourceCodeHref: "https://github.com/Pratik-Pattewar1",
     liveWebsiteHref: "",
+  },
+  {
+    name: "My portfolio",
+    favicon: "/images/projects/logos/favicon.ico",
+    imageUrl: [
+      "/images/projects/portfolioDark.png",
+      "/images/projects/portfolioLight.png",
+    ],
+    description:
+      "My personal portfolio website made using Nextjs, tailwindcss and framer motion.",
+    sourceCodeHref: "https://github.com/Pratik-Pattewar1",
+    liveWebsiteHref: siteMetadata.siteUrl,
   },
   
 ];

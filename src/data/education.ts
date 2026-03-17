@@ -19,7 +19,7 @@ export const EDUCATION: ExperienceShowcaseListItemProps[] = [
       href: "https://schools.org.in/parbhani/27171000165/late-raosaheb-jamkar-secondary-&-higher-secondary-school-parbhani.html",
     },
     date: "2022-2023",
-    location: "Vile Parle, Mumbai",
+    location: "Parbhani, Maharastra",
     description:
       "A motivated higher secondary student with a strong interest in computer science and technology.",
   },

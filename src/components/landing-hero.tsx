@@ -32,7 +32,7 @@ export default function LandingHero() {
       }}
       transition={{ type: "spring", stiffness: 100 }}
       ref={ref}
-      className="pointer-events-none flex max-h-[1000px] min-h-[calc(100vh-200px)] items-center px-6 sm:px-14 md:h-[calc(100vh-200px)] md:min-h-max md:px-20"
+      className=" flex max-h-[1000px] min-h-[calc(100vh-200px)] items-center px-6 sm:px-14 md:h-[calc(100vh-200px)] md:min-h-max md:px-20"
     >
       <div className="w-full">
         <div className="mx-auto max-w-7xl">
@@ -57,6 +57,15 @@ export default function LandingHero() {
                 <span className="font-semibold text-accent">HTML</span> and{" "}
                 <span className="font-semibold text-accent">CSS</span>
               </div>
+              <div className="mt-6">
+  <a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white dark:text-black shadow-md transition-all duration-300 hover:bg-accent/80 hover:scale-105">
+  View Resume
+</a>
+</div>
             </FadeUp>
           </AnimatePresence>
         </div>
